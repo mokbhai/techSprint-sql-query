@@ -1,8 +1,12 @@
 CREATE TABLE Registrations (
-    id INT PRIMARY KEY IDENTITY(1,1), -- Auto-incrementing primary key [[1]]
-    teamName VARCHAR(255),  -- Allow null for individual registrations
-    teamId VARCHAR(255), -- Can be NULL
-    amount DECIMAL(19,4), --  For currency, adjust precision/scale as needed
+    id INT PRIMARY KEY IDENTITY(1,1), 
+    [key] VARCHAR(255), 
+    [email] VARCHAR(255), 
+    [phone] VARCHAR(255), 
+    [name] VARCHAR(255), 
+    teamName VARCHAR(255), 
+    teamId VARCHAR(255), 
+    amount DECIMAL(19,4), 
     paymentStatus VARCHAR(255) NOT NULL DEFAULT 'Pending' CHECK (paymentStatus IN ('Completed', 'Pending', 'Failed', 'Refunded')), -- Use CHECK constraint for specific values
     paymentId INT, -- Foreign key to Payments table
     isDeleted BIT DEFAULT 0,
