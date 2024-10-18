@@ -8,7 +8,7 @@ CREATE TABLE Registrations (
     teamId VARCHAR(255), 
     amount DECIMAL(19,4), 
     paymentStatus VARCHAR(255) NOT NULL DEFAULT 'Pending' CHECK (paymentStatus IN ('Completed', 'Pending', 'Failed', 'Refunded')), -- Use CHECK constraint for specific values
-    paymentId INT, -- Foreign key to Payments table
+    paymentId VARCHAR(255),
     isDeleted BIT DEFAULT 0,
     createdAt DATETIME2(7) DEFAULT GETUTCDATE(),
     updatedAt DATETIME2(7) DEFAULT GETUTCDATE()
