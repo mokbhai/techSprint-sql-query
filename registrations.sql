@@ -6,7 +6,7 @@ CREATE TABLE Registrations (
     [name] VARCHAR(255), 
     teamName VARCHAR(255), 
     teamId VARCHAR(255), 
-    amount DECIMAL(19,4), 
+    amount DECIMAL(10,2), 
     paymentStatus VARCHAR(255) NOT NULL DEFAULT 'Pending' CHECK (paymentStatus IN ('Completed', 'Pending', 'Failed', 'Refunded')), -- Use CHECK constraint for specific values
     paymentId VARCHAR(255),
     isDeleted BIT DEFAULT 0,
